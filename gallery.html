@@ -226,6 +226,16 @@ section.block:last-of-type { border-bottom: none; }
 .entry ul { margin: 0.6rem 0 0; padding-left: 1.1rem; }
 .entry li { margin-bottom: 0.35rem; }
 
+/* ---------- Gallery albums (frameless) ---------- */
+.grid .card.album {
+  background: transparent; border: none; padding: 0;
+}
+.grid .card.album:hover { border: none; }
+.caption {
+  color: var(--muted); font-size: 0.88rem;
+  margin: 0.3rem 0 0.4rem; line-height: 1.45;
+}
+
 /* ---------- News list ---------- */
 .news { list-style: none; margin: 0; padding: 0; }
 .news li {
@@ -295,7 +305,7 @@ table.cv td:first-child {
 <body>
 <nav class="nav"><div class="nav-inner">
 <a class="brand" href="index.html">Obed <span>Issakah</span></a>
-<div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="projects.html">Projects</a><a href="teaching.html">Teaching</a><a href="blog.html">Blog</a><a href="talks.html">Talks</a><a href="gallery.html" class="active">Gallery</a><a href="fun.html">Fun</a><a href="cv.html">CV</a><a href="contact.html">Contact</a></div>
+<div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="projects.html">Projects</a><a href="teaching.html">Teaching</a><a href="blog.html">Blog</a><a href="talks.html">Talks</a><a href="gallery.html" class="active">Gallery</a><a href="cv.html">CV</a><a href="contact.html">Contact</a></div>
 </div></nav>
 
 <div class="wrap">
@@ -307,24 +317,34 @@ table.cv td:first-child {
 
 <section class="block">
 <div class="grid cols-3">
-<div class="card"><div class="meta">Album</div><h3>Conferences</h3>
+<div class="card album"><div class="meta">Album</div><h3>Conferences</h3>
 <img src="assets/img/gallery/conferences/co1.jpeg" alt="Presenting my poster" style="width:100%; border-radius:3px; margin-top:0.5rem;">
-<img src="assets/img/gallery/conferences/co2.jpeg" alt="With colleagues at the conference" style="width:100%; border-radius:3px; margin-top:0.5rem;"></div>
+<p class="caption">WRITE-UP HERE — e.g. which conference, where, what you presented.</p>
+<img src="assets/img/gallery/conferences/co2.jpeg" alt="With colleagues at the conference" style="width:100%; border-radius:3px; margin-top:0.5rem;">
+<p class="caption">WRITE-UP HERE.</p></div>
    
-<div class="card"><div class="meta">Album</div><h3>Lab life</h3>
+<div class="card album"><div class="meta">Album</div><h3>Lab life</h3>
 <img src="assets/img/gallery/lablife/lab1.jpeg" alt="Working in the lab" style="width:100%; border-radius:3px; margin-top:0.5rem;">
 <img src="assets/img/gallery/lablife/lab2.jpeg" alt="The team" style="width:100%; border-radius:3px; margin-top:0.5rem;"></div>
    
-<div class="card"><div class="meta">Album</div><h3>Campus</h3>
+<div class="card album"><div class="meta">Album</div><h3>Campus</h3>
 <img src="assets/img/gallery/campus/ca1.jpeg" alt="KNUST campus" style="width:100%; border-radius:3px; margin-top:0.5rem;">
 <img src="assets/img/gallery/campus/ca2.jpeg" alt="KNUST campus" style="width:100%; border-radius:3px; margin-top:0.5rem;">
 <img src="assets/img/gallery/campus/ca3.jpeg" alt="Around the university" style="width:100%; border-radius:3px; margin-top:0.5rem;"></div>
    
-<div class="card"><div class="meta">Album</div><h3>Travel</h3>
+<div class="card album"><div class="meta">Album</div><h3>Travel</h3>
 <img src="assets/img/gallery/travel/tr1.jpeg" alt="Trip photo" style="width:100%; border-radius:3px; margin-top:0.5rem;">
-<img src="assets/img/gallery/travel/tr2.jpeg" alt="Trip photo" style="width:100%; border-radius:3px; margin-top:0.5rem;"></div>
+<p class="caption">WRITE-UP HERE — e.g. place, year, a line about the trip.</p>
+<img src="assets/img/gallery/travel/tr2.jpeg" alt="Trip photo" style="width:100%; border-radius:3px; margin-top:0.5rem;">
+<p class="caption">WRITE-UP HERE.</p></div>
+
+<div class="card album"><div class="meta">Album</div><h3>Hobbies</h3>
+<img src="assets/img/gallery/hobby/fun.jpeg" alt="Hobby photo" style="width:100%; border-radius:3px; margin-top:0.5rem;">
+<img src="assets/img/gallery/hobby/fun1.jpeg" alt="Hobby photo" style="width:100%; border-radius:3px; margin-top:0.5rem;">
+<img src="assets/img/gallery/hobby/fun3.jpeg" alt="Hobby photo" style="width:100%; border-radius:3px; margin-top:0.5rem;">
+<img src="assets/img/gallery/hobby/fun4.jpeg" alt="Hobby photo" style="width:100%; border-radius:3px; margin-top:0.5rem;"></div>
    
-<div class="card"><div class="meta">Album</div><h3>Nature</h3>
+<div class="card album"><div class="meta">Album</div><h3>Nature</h3>
 <img src="assets/img/gallery/nature/n1.jpeg" alt="Landscape" style="width:100%; border-radius:3px; margin-top:0.5rem;">
 <img src="assets/img/gallery/nature/n2.jpeg" alt="Landscape" style="width:100%; border-radius:3px; margin-top:0.5rem;">
 <img src="assets/img/gallery/nature/n3.jpeg" alt="Landscape" style="width:100%; border-radius:3px; margin-top:0.5rem;">
@@ -332,7 +352,7 @@ table.cv td:first-child {
 <img src="assets/img/gallery/nature/n5.jpeg" alt="Landscape" style="width:100%; border-radius:3px; margin-top:0.5rem;">
 <img src="assets/img/gallery/nature/n6.jpeg" alt="Outdoors" style="width:100%; border-radius:3px; margin-top:0.5rem;"></div>
    
-<div class="card"><div class="meta">Album</div><h3>Friends &amp; community</h3>
+<div class="card album"><div class="meta">Album</div><h3>Friends</h3>
 <img src="assets/img/gallery/friends/fr1.jpeg" alt="With friends" style="width:100%; border-radius:3px; margin-top:0.5rem;">
 <img src="assets/img/gallery/friends/fr2.jpeg" alt="With friends" style="width:100%; border-radius:3px; margin-top:0.5rem;">
 <img src="assets/img/gallery/friends/fr3.jpeg" alt="With friends" style="width:100%; border-radius:3px; margin-top:0.5rem;">
