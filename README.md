@@ -18,8 +18,15 @@ fun.html            Hobbies / travel / books (scaffold to fill in)
 cv.html             Condensed CV + PDF download
 contact.html        Contact info & profiles
 assets/
-  style.css         All styling
+  style.css         Master stylesheet (see note below)
   Obed_Issakah_CV.pdf
+site_gen.py         Generator script (optional, for restyling)
+
+Note on styling: every HTML page has the full CSS embedded in its <head>,
+so pages look right even if opened alone or if the assets folder is missing.
+To change colors or fonts: edit assets/style.css, then run
+`python3 site_gen.py` to regenerate all pages with the new styles.
+(Or just ask Claude to restyle it.)
 ```
 
 ## Deploy on GitHub Pages
@@ -41,4 +48,4 @@ Note: you already have a repo serving `oissakah.github.io/myportfolio/`. If you 
 - **Photo:** add a headshot to `assets/` and place it in the hero on `index.html`.
 - **Placeholders:** the About, Fun, Projects, and Contact pages contain clearly marked dashed boxes for personal content (hobbies, books, gallery, Google Scholar/ORCID links). Replace them with your own material.
 - **News:** add new items to the list on `index.html` as things happen.
-- **Colors/fonts:** everything is controlled by the CSS variables at the top of `assets/style.css`.
+- **Colors/fonts:** edit the CSS variables at the top of `assets/style.css`, then run `python3 site_gen.py` to apply them to all pages.
