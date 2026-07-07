@@ -191,7 +191,11 @@ section.block:last-of-type { border-bottom: none; }
   padding: 1.25rem 1.35rem;
 }
 .card { transition: border-color 0.15s ease; }
-.card.media { padding: 1.4rem 1.25rem 1.25rem; text-align: center; }
+.card.media {
+  padding: 1.4rem 1.25rem 1.25rem; text-align: center;
+  background: transparent; border: none;
+}
+.card.media:hover { border: none; }
 .card.media img.card-img {
   display: block; width: 160px; height: 160px;
   border-radius: 50%; object-fit: cover;
@@ -320,6 +324,7 @@ table.cv td:first-child {
 </div>
 </div>
 </header>
+
 <div class="wrap">
 <section class="block">
 <div class="section-head">
@@ -355,7 +360,7 @@ table.cv td:first-child {
 <img class="card-img" src="assets/img/ai-ml.jpg" alt="Vitruvian-style illustration of an AI figure with scientific instruments">
 <div class="card-body">
 <div class="meta">AI &amp; ML for materials design</div>
-<h3>Machine learning for materials</h3> 
+<h3>Machine learning for materials</h3>
 <p class="quiet">Graph neural networks, reinforcement learning, and interpretable models for high-throughput screening and structure–property prediction.</p>
 </div>
 </div>
