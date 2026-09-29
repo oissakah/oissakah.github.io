@@ -21,6 +21,7 @@ PRIMARY_PAGES = [
     "nanonecklace.html",
     "pfas-catalysis.html",
     "ml-composites.html",
+    "materials-informatics.html",
 ]
 REQUIRED_NAV = ["Home", "Research", "Projects", "Publications", "About", "CV", "Contact"]
 
