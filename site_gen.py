@@ -24,20 +24,33 @@ PRIMARY_PAGES = [
     "materials-informatics.html",
 ]
 REQUIRED_NAV = ["Home", "Research", "Projects", "Publications", "About", "CV", "Contact"]
+SCHOLAR_URL = "https://scholar.google.com/citations?user=Bu1-L3cAAAAJ&hl=en"
+ORCID_URL = "https://orcid.org/0009-0000-6733-4003"
 
 
 def audit_page(path: Path) -> list[str]:
     issues = []
     text = path.read_text(encoding="utf-8")
+
     if 'href="assets/style.css"' not in text:
         issues.append("missing shared stylesheet link")
     if "oissakah.github.io/myportfolio" in text:
         issues.append("contains legacy myportfolio URL")
     if "https://github.com/oissakah" not in text:
         issues.append("missing GitHub profile link")
+    if SCHOLAR_URL not in text:
+        issues.append("missing Google Scholar profile link")
+    if ORCID_URL not in text:
+        issues.append("missing ORCID profile link")
+    if '<meta name="description"' not in text:
+        issues.append("missing meta description")
+    if 'rel="canonical"' not in text:
+        issues.append("missing canonical URL")
+
     for label in REQUIRED_NAV:
         if f">{label}<" not in text:
             issues.append(f"navigation missing {label}")
+
     for href in re.findall(r'href="([^"]+)"', text):
         if href.startswith(("http://", "https://", "mailto:", "#")):
             continue
@@ -47,6 +60,7 @@ def audit_page(path: Path) -> list[str]:
         target = ROOT / clean
         if not target.exists():
             issues.append(f"local link target not found: {clean}")
+
     return issues
 
 
@@ -67,13 +81,16 @@ def main() -> int:
                 print(f"      - {issue}")
         else:
             print(f"OK    {name}")
+
     if not (ROOT / "assets" / "style.css").exists():
         print("FAIL  assets/style.css: file missing")
         failures += 1
+
     print()
     if failures:
         print(f"Audit completed with {failures} page/file issue group(s).")
         return 1
+
     print("Audit passed. Primary portfolio pages are internally consistent.")
     return 0
 
