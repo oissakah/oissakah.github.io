@@ -11,6 +11,7 @@ index.html            Research-focused homepage
 research.html         Current research program and selected earlier work
 projects.html         Selected projects with methods, outcomes, paper/code links
 nanonecklace.html     Flagship nanonecklace transport project
+pfas-catalysis.html   Computational catalysis project for PFAS remediation
 publications.html     Journal articles and preprints
 about.html            Academic journey and research identity
 cv.html               Condensed CV + downloadable PDF
@@ -18,7 +19,7 @@ contact.html          Contact and professional links
 assets/
   style.css           Shared design system
   Obed_Issakah_CV.pdf Downloadable CV
-  img/                 Portrait and legacy imagery
+  img/                Portrait and supporting imagery
 ```
 
 Legacy pages such as `blog.html`, `talks.html`, `teaching.html`, and `gallery.html` remain in the repository but are intentionally **not included in the primary navigation** until they contain polished, current material.
@@ -71,15 +72,15 @@ The portfolio is intentionally organized around the current research identity:
 3. **AI for materials discovery** — graph learning, interpretable ML, high-throughput screening, and materials informatics.
 4. **Earlier materials research** — sustainable composites, batteries, and porous-material catalyst screening.
 
-## Flagship research page
+## Featured research assets
 
-The nanonecklace project is presented at:
+The nanonecklace project page uses the real causal-framework image stored in the public research repository:
 
 ```text
-nanonecklace.html
+https://github.com/oissakah/graph-based-nanoparticle-necklace-network/tree/main/framework_diagram
 ```
 
-It links directly to the preprint and public code repository.
+The PFAS page intentionally presents the scientific workflow without publishing unpublished numerical results. Public adsorption structures, benchmark figures, code, or manuscript links can be added later when released.
 
 ## Deployment
 
