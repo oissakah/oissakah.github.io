@@ -1,51 +1,90 @@
-# Obed Issakah — Personal Academic Website
+# Obed Issakah — Academic Research Portfolio
 
-A static, dependency-free website (plain HTML + CSS) ready for GitHub Pages.
+GitHub Pages portfolio for **Obed Issakah**, focused on computational materials, physics-informed AI, graph-based transport, atomistic simulation, and materials design.
 
-## Structure
+Live site: `https://oissakah.github.io/`
 
-```
-index.html          Home (hero, research snapshot, news)
-about.html          Academic journey + personal section
-research.html       Research experience (5 projects)
-publications.html   Journal articles with DOI links
-projects.html       Research & side projects
-teaching.html       Teaching & mentoring
-blog.html           Blog (scaffold — add posts)
-talks.html          Talks & presentations (scaffold — add entries)
-gallery.html        Photo albums (scaffold — add images)
-fun.html            Hobbies / travel / books (scaffold to fill in)
-cv.html             Condensed CV + PDF download
-contact.html        Contact info & profiles
+## Primary site structure
+
+```text
+index.html            Research-focused homepage
+research.html         Current research program and selected earlier work
+projects.html         Selected projects with methods, outcomes, paper/code links
+nanonecklace.html     Flagship nanonecklace transport project
+publications.html     Journal articles and preprints
+about.html            Academic journey and research identity
+cv.html               Condensed CV + downloadable PDF
+contact.html          Contact and professional links
 assets/
-  style.css         Master stylesheet (see note below)
-  Obed_Issakah_CV.pdf
-site_gen.py         Generator script (optional, for restyling)
-
-Note on styling: every HTML page has the full CSS embedded in its <head>,
-so pages look right even if opened alone or if the assets folder is missing.
-To change colors or fonts: edit assets/style.css, then run
-`python3 site_gen.py` to regenerate all pages with the new styles.
-(Or just ask Claude to restyle it.)
+  style.css           Shared design system
+  Obed_Issakah_CV.pdf Downloadable CV
+  img/                 Portrait and legacy imagery
 ```
 
-## Deploy on GitHub Pages
+Legacy pages such as `blog.html`, `talks.html`, `teaching.html`, and `gallery.html` remain in the repository but are intentionally **not included in the primary navigation** until they contain polished, current material.
 
-**Option A — main personal site (recommended):**
-1. Create a repository named exactly `oissakah.github.io` (public).
-2. Upload all files in this folder to the repository root.
-3. Wait a minute or two; the site will be live at `https://oissakah.github.io/`.
+## Design system
 
-**Option B — project site:**
-1. Create any repository (e.g. `website`) and upload the files.
-2. Go to Settings → Pages → set Source to "Deploy from a branch", branch `main`, folder `/ (root)`.
-3. The site will be live at `https://oissakah.github.io/website/`.
+The site uses a restrained academic/scientific visual system:
 
-Note: you already have a repo serving `oissakah.github.io/myportfolio/`. If you use Option A, that project site keeps working at its own URL; the new site takes the root URL.
+- Zilla Slab for display typography
+- IBM Plex Sans for body text
+- IBM Plex Mono for research labels and metadata
+- Teal / slate / gold palette
+- Responsive static HTML and CSS
+- Scientific project cards, method tags, direct paper/code links, and research-story layouts
 
-## Things to customize
+All primary pages reference the shared stylesheet:
 
-- **Photo:** add a headshot to `assets/` and place it in the hero on `index.html`.
-- **Placeholders:** the About, Fun, Projects, and Contact pages contain clearly marked dashed boxes for personal content (hobbies, books, gallery, Google Scholar/ORCID links). Replace them with your own material.
-- **News:** add new items to the list on `index.html` as things happen.
-- **Colors/fonts:** edit the CSS variables at the top of `assets/style.css`, then run `python3 site_gen.py` to apply them to all pages.
+```html
+<link rel="stylesheet" href="assets/style.css">
+```
+
+Edit `assets/style.css` once to change the visual system across the primary site.
+
+## Editing workflow
+
+The static HTML files are the source of truth. Edit the relevant `.html` file directly and update `assets/style.css` for shared styling.
+
+The previous page generator was retired because generated content and manually edited pages had diverged. `site_gen.py` is now a **non-destructive audit helper** and does not write or overwrite site files.
+
+Run locally with:
+
+```bash
+python3 site_gen.py
+```
+
+The audit checks primary pages for:
+
+- shared stylesheet references
+- required primary navigation items
+- local broken-link targets
+- GitHub profile links
+- legacy `myportfolio` URLs
+
+## Current research emphasis
+
+The portfolio is intentionally organized around the current research identity:
+
+1. **Nanomaterial electron transport** — graph-based Kirchhoff modeling, voltage-driven percolation, internal current dynamics, and GNN surrogates.
+2. **Computational catalysis for PFAS remediation** — DFT, VASP, ASE, machine-learned interatomic potentials, adsorption energetics, and surface screening.
+3. **AI for materials discovery** — graph learning, interpretable ML, high-throughput screening, and materials informatics.
+4. **Earlier materials research** — sustainable composites, batteries, and porous-material catalyst screening.
+
+## Flagship research page
+
+The nanonecklace project is presented at:
+
+```text
+nanonecklace.html
+```
+
+It links directly to the preprint and public code repository.
+
+## Deployment
+
+This repository is named `oissakah.github.io`, so the `main` branch root is served through GitHub Pages at:
+
+```text
+https://oissakah.github.io/
+```
