@@ -7,19 +7,25 @@ Live site: `https://oissakah.github.io/`
 ## Primary site structure
 
 ```text
-index.html            Research-focused homepage
-research.html         Current research program and selected earlier work
-projects.html         Selected projects with methods, outcomes, paper/code links
-nanonecklace.html     Flagship nanonecklace transport project
-pfas-catalysis.html   Computational catalysis project for PFAS remediation
-publications.html     Journal articles and preprints
-about.html            Academic journey and research identity
-cv.html               Condensed CV + downloadable PDF
-contact.html          Contact and professional links
+index.html                 Research-focused homepage
+research.html              Current research program and selected earlier work
+projects.html              Selected projects with methods, outcomes, paper/code links
+nanonecklace.html          Flagship nanonecklace transport project
+pfas-catalysis.html        Computational catalysis project for PFAS remediation
+ml-composites.html         Published ML + sustainable-composites research story
+materials-informatics.html Earlier computational materials and battery work
+publications.html          Journal articles and preprints
+about.html                 Academic journey and research identity
+cv.html                    Condensed CV + downloadable PDF
+contact.html               Contact and professional links
+site.webmanifest           Browser/site identity metadata
 assets/
-  style.css           Shared design system
-  Obed_Issakah_CV.pdf Downloadable CV
-  img/                Portrait and supporting imagery
+  style.css                Shared design system
+  favicon.svg              OI portfolio mark
+  social-preview.png       1200 × 630 social-sharing image
+  social-preview.svg       Editable vector version of the sharing artwork
+  Obed_Issakah_CV.pdf      Downloadable CV
+  img/                     Portrait and supporting imagery
 ```
 
 Legacy pages such as `blog.html`, `talks.html`, `teaching.html`, and `gallery.html` remain in the repository but are intentionally **not included in the primary navigation** until they contain polished, current material.
@@ -34,6 +40,8 @@ The site uses a restrained academic/scientific visual system:
 - Teal / slate / gold palette
 - Responsive static HTML and CSS
 - Scientific project cards, method tags, direct paper/code links, and research-story layouts
+- Branded `OI` favicon/site mark
+- A consistent 1200 × 630 social-preview card for LinkedIn, messaging, and Open Graph sharing
 
 All primary pages reference the shared stylesheet:
 
@@ -42,6 +50,20 @@ All primary pages reference the shared stylesheet:
 ```
 
 Edit `assets/style.css` once to change the visual system across the primary site.
+
+## Discoverability and sharing
+
+Primary pages include:
+
+- canonical URLs
+- descriptive `<meta name="description">` metadata
+- author and browser theme-color metadata
+- favicon and web-manifest references
+- Open Graph titles, descriptions, URLs, and images
+- Twitter/X large-image card metadata
+- Google Scholar, ORCID, GitHub, and LinkedIn identity links
+
+Most pages use `assets/social-preview.png` as the social card. The nanonecklace project intentionally uses its real public causal-framework figure as its project-specific Open Graph/Twitter image.
 
 ## Editing workflow
 
@@ -60,8 +82,11 @@ The audit checks primary pages for:
 - shared stylesheet references
 - required primary navigation items
 - local broken-link targets
-- GitHub profile links
+- GitHub, Google Scholar, and ORCID links
+- canonical URLs and descriptions
+- favicon, manifest, theme-color, Open Graph image, and Twitter/X card metadata
 - legacy `myportfolio` URLs
+- required branding assets
 
 ## Current research emphasis
 
